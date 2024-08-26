@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Query</h2>
+<form method="post">
+    <label for="search_terms">Search Terms:</label>
+    <input type="text" id="search_terms" name="search_terms" required>
+    <button type="submit">Search</button>
+</form>
+
+{% if results %}
+<h3>Results</h3>
+<table>
+    <tr>
+        <th>URL</th>
+        <th>Score</th>
+    </tr>
+    {% for result in results %}
+    <tr>
+        <td>{{ result[0] }}</td>
+        <td>{{ result[1] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

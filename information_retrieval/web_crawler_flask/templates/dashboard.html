@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Dashboard</h2>
+<p>Total Links: {{ total_links }}</p>
+<form method="post" action="{{ url_for('run_crawler') }}">
+    <button type="submit">Run Crawler</button>
+</form>
+{% endblock %}
