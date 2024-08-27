@@ -255,6 +255,7 @@ class LinkCrawler(threading.Thread):
                     if link not in self.seed_urls:
                         self.seed_urls.append(link)
                         print(f"{CYAN}➕ Added {link} from discovered links to seed URLs{RESET}")
+                        self.to_crawl.append((link, 0))
 
     def _load_crawled_sites(self):
         if os.path.exists(self.crawled_sites_file):
@@ -531,7 +532,7 @@ class VisualizationManager(threading.Thread):
             pos = nx.spring_layout(G, k=0.1, iterations=50)
             node_sizes = [len(self.relationship_manager.link_relationships[node]) * 100 for node in G.nodes()]
 
-            nx.draw(G, pos, with_labels=True, node_size=node_sizes, edge_color="white", node_color="black", font_size=10, font_color="white", linewidths=0.5)
+            nx.draw(G, pos, with_labels=True, node_size=node_sizes, edge_color="white", node_color="red", font_size=15, font_color="yellow", linewidths=0.5)
             plt.gca().set_facecolor("black")
 
             output_path = "link_cloud.png"
