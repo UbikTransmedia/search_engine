@@ -2,6 +2,8 @@
 
 This project is a comprehensive Python-based crawler and indexer designed to explore, crawl, and index hidden services on the Tor network (".onion" sites). The system can analyze and visualize relationships between different sites, generate reverse content indices, and provide TF-IDF based search capabilities over the crawled content.
 
+![Screenshot of the app](img/link_cloud.png)
+
 ## Features
 
 - **Tor Integration**: Establishes a secure session over the Tor network to anonymously crawl `.onion` sites.
@@ -10,6 +12,8 @@ This project is a comprehensive Python-based crawler and indexer designed to exp
 - **Link Relationship Mapping**: Captures and maps relationships between different `.onion` links discovered during the crawl.
 - **TF-IDF Based Search**: Implements a simple search engine using TF-IDF to rank indexed pages based on query relevance.
 - **Visualization**: Generates visual representations of term frequency (word clouds) and site relationships (network graphs).
+
+![Screenshot of the app](img/output1.png)
 
 ## Components
 
@@ -22,6 +26,8 @@ This project is a comprehensive Python-based crawler and indexer designed to exp
 - **VisualizationManager**: Creates visualizations of the term frequencies (word clouds) and the interlinking of crawled `.onion` sites (network graphs).
 - **QueryEngine**: Provides an interface for querying the indexed data and retrieving relevant search results.
 - **REPL**: A simple read-eval-print loop (REPL) interface for querying the indexed data.
+
+![Screenshot of the app](img/term_cloud.png)
 
 ## Installation
 
