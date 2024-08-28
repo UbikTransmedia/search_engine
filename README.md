@@ -2,7 +2,7 @@
 
 This project is a comprehensive Python-based crawler and indexer designed to explore, crawl, and index hidden services on the Tor network (".onion" sites). The system can analyze and visualize relationships between different sites, generate reverse content indices, and provide TF-IDF based search capabilities over the crawled content.
 
-![Screenshot of the app](img/link_cloud.png)
+![Screenshot of the app](img/link_cloud2.png)
 
 ## Features
 
@@ -15,17 +15,31 @@ This project is a comprehensive Python-based crawler and indexer designed to exp
 
 ![Screenshot of the app](img/output1.png)
 
-## Components
+## Key Components
 
-- **TorSession**: Manages the connection to the Tor network, establishing secure sessions for crawling.
-- **LinkIndexManager**: Manages the indexed data of crawled links, including saving and loading the index to/from a file.
-- **ReverseContentIndexManager**: Maintains a reverse index of content terms for fast retrieval and search operations.
-- **LinkRelationshipManager**: Tracks and saves the relationships between discovered links.
-- **LinkCrawler**: The main crawling engine that recursively explores `.onion` sites, indexes content, and discovers new links.
-- **ReverseIndexer**: Calculates and manages TF-IDF scores for search terms across indexed documents.
-- **VisualizationManager**: Creates visualizations of the term frequencies (word clouds) and the interlinking of crawled `.onion` sites (network graphs).
-- **QueryEngine**: Provides an interface for querying the indexed data and retrieving relevant search results.
-- **REPL**: A simple read-eval-print loop (REPL) interface for querying the indexed data.
+- **TorSession**: Manages the connection to the Tor network, establishing a secure session for crawling `.onion` sites.
+  
+- **LinkCrawler**: Crawls the dark web, discovering new `.onion` links, indexing content, and managing relationships between links.
+
+- **SearchEngineCrawler**: Queries dark web search engines to discover additional `.onion` links.
+
+- **LinkIndexManager**: Handles storing and retrieving indexed links.
+
+- **ReverseContentIndexManager**: Manages the reverse index, mapping search terms to the documents in which they appear.
+
+- **LinkRelationshipManager**: Tracks relationships between different `.onion` sites, such as mutual links and loops.
+
+- **KPIManager**: Calculates and stores KPIs, such as:
+  - Mean response time of crawled sites
+  - Ratio of mutual links
+  - Count of link loops where a link points to itself
+  - Total number of links indexed
+  - Total number of terms indexed
+
+- **VisualizationManager**: Generates word clouds and link graphs to visualize the indexed content and relationships.
+
+- **REPL and QueryEngine**: Provides an interactive shell for querying the indexed data.
+
 
 ![Screenshot of the app](img/term_cloud.png)
 
@@ -46,7 +60,7 @@ This project is a comprehensive Python-based crawler and indexer designed to exp
 4. **Run the Crawler**:
     Ensure you have the Tor service running on your system. Start the crawler by running the main script:
     ```bash
-    python tor_search_csv_14.py
+    python tor_search_csv_xx.py
     ```
 
 ## Usage

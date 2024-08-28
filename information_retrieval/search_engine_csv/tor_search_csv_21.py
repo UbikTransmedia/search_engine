@@ -680,7 +680,7 @@ class VisualizationManager(threading.Thread):
 
             plt.figure(figsize=figsize)
             pos = nx.spring_layout(G, k=0.1, iterations=50)
-            node_sizes = [len(relationship_snapshot.get(node, [])) * 100 for node in G.nodes()]
+            node_sizes = [len(relationship_snapshot.get(node, [])) * 10 for node in G.nodes()]
 
             for node, (x, y) in pos.items():
                 plt.text(x, y, s=node, fontsize=10, color="yellow", ha='center', va='center', alpha=0.2)
